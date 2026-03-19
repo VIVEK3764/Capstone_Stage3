@@ -1,0 +1,46 @@
+{
+    "attempt_id": "attempt_invariant",
+    "setup": {
+        "deployments": {
+            "target": {
+                "file": "InvariantBug.sol",
+                "contract": "InvariantBug",
+                "args": []
+            }
+        }
+    },
+    "prestate": {
+        "deals": [
+            {
+                "address": "attacker",
+                "amount_wei": "1 ether"
+            }
+        ]
+    },
+    "calls": [
+        {
+            "contract": "target",
+            "function": "deposit",
+            "args": [],
+            "from": "attacker",
+            "value": "1 ether"
+        },
+        {
+            "contract": "target",
+            "function": "burn",
+            "args": [
+                "1000000"
+            ],
+            "from": "attacker",
+            "value": "0"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "storage_eq",
+            "target": "target",
+            "slot": "0",
+            "value": "1000000000000000000"
+        }
+    ]
+}

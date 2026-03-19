@@ -1,0 +1,47 @@
+{
+    "attempt_id": "exp_reentrancy_001",
+    "setup": {
+        "target": {
+            "file": "Vault.sol",
+            "contract": "Vault",
+            "args": []
+        },
+        "attacker_contract": {
+            "file": "ReentrancyAttacker.sol",
+            "contract": "ReentrancyAttacker",
+            "args": [
+                "address(target)"
+            ]
+        }
+    },
+    "prestate": {
+        "deals": [
+            {
+                "address": "attacker",
+                "amount_wei": "2 ether"
+            }
+        ],
+        "storage_writes": []
+    },
+    "calls": [
+        {
+            "contract": "attackerContract",
+            "function": "attack",
+            "args": [],
+            "from": "attacker",
+            "value": "1 ether"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "balance_gt_before",
+            "address": "attacker"
+        },
+        {
+            "type": "balance_gt",
+            "address": "attacker",
+            "value": "5 ether"
+        }
+    ],
+    "foundry_minimal": "basic"
+}

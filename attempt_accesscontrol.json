@@ -1,0 +1,30 @@
+{
+    "attempt_id": "attempt_accesscontrol",
+    "setup": {
+        "deployments": {
+            "target": {
+                "file": "AccessControl.sol",
+                "contract": "AccessControl",
+                "args": []
+            }
+        }
+    },
+    "prestate": {
+        "deals": []
+    },
+    "calls": [
+        {
+            "contract": "target",
+            "function": "withdrawAll",
+            "args": [],
+            "from": "attacker",
+            "value": "0 ether"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "balance_gt_before",
+            "address": "attacker"
+        }
+    ]
+}

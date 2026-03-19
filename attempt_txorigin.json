@@ -1,0 +1,39 @@
+{
+    "attempt_id": "attempt_txorigin",
+    "setup": {
+        "deployments": {
+            "target": {
+                "file": "TxOrigin.sol",
+                "contract": "TxOrigin",
+                "args": []
+            },
+            "attacker_contract": {
+                "file": "TxOriginAttacker.sol",
+                "contract": "TxOriginAttacker",
+                "args": [
+                    "target"
+                ]
+            }
+        }
+    },
+    "prestate": {
+        "deals": []
+    },
+    "calls": [
+        {
+            "contract": "attacker_contract",
+            "function": "attack",
+            "args": [],
+            "from": "attacker",
+            "value": "0"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "storage_eq",
+            "target": "target",
+            "slot": "0",
+            "value": "0x0000000000000000000000000000000000000123"
+        }
+    ]
+}

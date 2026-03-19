@@ -1,0 +1,50 @@
+{
+    "attempt_id": "attempt_dos",
+    "setup": {
+        "deployments": {
+            "target": {
+                "file": "KingOfEther.sol",
+                "contract": "KingOfEther",
+                "args": []
+            },
+            "attacker_contract": {
+                "file": "DoSMalicious.sol",
+                "contract": "DoSMalicious",
+                "args": [
+                    "target"
+                ]
+            }
+        }
+    },
+    "prestate": {
+        "deals": [
+            {
+                "address": "attacker",
+                "amount_wei": "5 ether"
+            }
+        ]
+    },
+    "calls": [
+        {
+            "contract": "attacker_contract",
+            "function": "attack",
+            "args": [],
+            "from": "attacker",
+            "value": "1 ether"
+        },
+        {
+            "contract": "target",
+            "function": "claim",
+            "args": [],
+            "from": "attacker",
+            "value": "2 ether"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "call_reverts",
+            "call_index": 1,
+            "reason": "Transfer failed"
+        }
+    ]
+}
