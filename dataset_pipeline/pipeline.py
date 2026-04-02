@@ -16,30 +16,13 @@ def build_pipeline(sol_file, output_file, label):
 
     contract_name = slither.contracts[0].name if slither.contracts else "unknown"
 
-    # research-level metadata
-    # final_output = {
-    #     "example_id": sol_file.split("/")[-1].replace(".sol", ""),
-    #     "split": "train",
-    #     "source": "auto-research",
-    #     "contract_id": contract_name,
-
-    #     "metadata": {
-    #         "num_contracts": len(slither.contracts),
-    #         "num_functions": sum(len(c.functions) for c in slither.contracts),
-    #         "num_leads": len(leads),
-    #     },
-
-    #     "target_output": {
-    #         "leads": leads,
-    #         "witnesses": witnesses
-    #     }
-    # }
+    
     final_output = {
     "example_id": sol_file.split("/")[-1].replace(".sol", ""),
     "split": "train",
     "source": "smartbugs",
 
-    "ground_truth": label,   # 🔥 NEW FIELD
+    "ground_truth": label,   #  NEW FIELD
 
     "contract_id": contract_name,
 

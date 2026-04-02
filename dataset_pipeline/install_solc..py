@@ -12,4 +12,4 @@ for v in versions:
     print("Installing:", v)
     install_solc(v)
 
-print("✅ All versions installed")
+print(" All versions installed")

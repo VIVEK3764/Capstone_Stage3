@@ -26,14 +26,14 @@ This pipeline is designed for:
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
-### ✅ Multi-Version Solidity Support
+###  Multi-Version Solidity Support
 
 * Automatically detects `pragma` version
 * Dynamically switches compiler (0.4.x → 0.8.x)
 
-### ✅ IR-Based Analysis (No Heuristics)
+###  IR-Based Analysis (No Heuristics)
 
 * Uses Slither Intermediate Representation (IR)
 * Avoids string matching or hardcoding
@@ -43,7 +43,7 @@ This pipeline is designed for:
   * State writes/reads
   * Control flow ordering
 
-### ✅ Multi-Vulnerability Detection
+###  Multi-Vulnerability Detection
 
 Supports major SWC categories:
 
@@ -56,7 +56,7 @@ Supports major SWC categories:
 * Timestamp Dependence (SWC-116)
 * tx.origin misuse (SWC-115)
 
-### ✅ Evidence-Based Reasoning
+###  Evidence-Based Reasoning
 
 Each detection includes:
 
@@ -64,7 +64,7 @@ Each detection includes:
 * Control-flow reasoning
 * State transition analysis
 
-### ✅ Witness Generation
+###  Witness Generation
 
 Generates execution traces:
 
@@ -72,12 +72,12 @@ Generates execution traces:
 * Call → state update sequences
 * Attack flow representation
 
-### ✅ Scoring System
+###  Scoring System
 
 * Confidence score (signal-based)
 * Priority score (severity-weighted)
 
-### ✅ Dataset Generation
+###  Dataset Generation
 
 * Batch processing of contracts
 * Automatic JSON generation
