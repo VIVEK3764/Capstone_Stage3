@@ -1,0 +1,123 @@
+{
+  "example_id": "dataset\\unchecked_low_level_calls\\0xf2570186500a46986f3139f65afedc2afe4f445d",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "unchecked_low_level_calls",
+  "contract_id": "RealOldFuckMaker",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 2,
+    "num_leads": 3
+  },
+  "target_output": {
+    "leads": [
+      {
+        "lead_id": "ld_000",
+        "pattern": "dos",
+        "swc_id": "SWC-113",
+        "target": {
+          "contract": "RealOldFuckMaker",
+          "function": "makeOldFucks(uint32)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': False, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': True, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "dos"
+          }
+        ],
+        "confidence": 0.21,
+        "priority_score": 0.41,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_001",
+        "pattern": "unchecked_call",
+        "swc_id": "SWC-104",
+        "target": {
+          "contract": "RealOldFuckMaker",
+          "function": "makeOldFucks(uint32)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': False, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': True, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "unchecked_call"
+          }
+        ],
+        "confidence": 0.23,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_002",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "RealOldFuckMaker",
+          "function": "slitherConstructorVariables()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      }
+    ],
+    "witnesses": [
+      {
+        "witness_id": "w_000",
+        "lead_id": "ld_000",
+        "path": [
+          "entry()",
+          "makeOldFucks(uint32)",
+          "external_call()",
+          "makeOldFucks(uint32)"
+        ],
+        "bad_state": "service_unavailable",
+        "precondition_cost": "low",
+        "confidence": 0.11
+      },
+      {
+        "witness_id": "w_001",
+        "lead_id": "ld_001",
+        "path": [
+          "entry()",
+          "makeOldFucks(uint32)",
+          "external_call()",
+          "makeOldFucks(uint32)"
+        ],
+        "bad_state": "silent_failure",
+        "precondition_cost": "low",
+        "confidence": 0.13
+      },
+      {
+        "witness_id": "w_002",
+        "lead_id": "ld_002",
+        "path": [
+          "entry()",
+          "slitherConstructorVariables()",
+          "external_call()",
+          "slitherConstructorVariables()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      }
+    ]
+  }
+}

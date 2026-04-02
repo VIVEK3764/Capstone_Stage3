@@ -1,0 +1,16 @@
+{
+  "example_id": "dataset\\bad_randomness\\guess_the_random_number",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "bad_randomness",
+  "contract_id": "GuessTheRandomNumberChallenge",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 3,
+    "num_leads": 0
+  },
+  "target_output": {
+    "leads": [],
+    "witnesses": []
+  }
+}

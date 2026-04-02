@@ -1,0 +1,16 @@
+{
+  "example_id": "dataset\\bad_randomness\\old_blockhash",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "bad_randomness",
+  "contract_id": "PredictTheBlockHashChallenge",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 3,
+    "num_leads": 0
+  },
+  "target_output": {
+    "leads": [],
+    "witnesses": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "example_id": "dataset\\unchecked_low_level_calls\\0x4051334adc52057aca763453820cb0e045076ef3",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "unchecked_low_level_calls",
+  "contract_id": "airdrop",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 1,
+    "num_leads": 1
+  },
+  "target_output": {
+    "leads": [
+      {
+        "lead_id": "ld_000",
+        "pattern": "dos",
+        "swc_id": "SWC-113",
+        "target": {
+          "contract": "airdrop",
+          "function": "transfer(address,address,address[],uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': False, 'has_require': True, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': True, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "dos"
+          }
+        ],
+        "confidence": 0.21,
+        "priority_score": 0.41,
+        "notes": "Multi-signal scoring applied"
+      }
+    ],
+    "witnesses": [
+      {
+        "witness_id": "w_000",
+        "lead_id": "ld_000",
+        "path": [
+          "entry()",
+          "transfer(address,address,address[],uint256)",
+          "external_call()",
+          "transfer(address,address,address[],uint256)"
+        ],
+        "bad_state": "service_unavailable",
+        "precondition_cost": "low",
+        "confidence": 0.11
+      }
+    ]
+  }
+}

@@ -1,0 +1,823 @@
+{
+  "example_id": "dataset\\unchecked_low_level_calls\\0x19cf8481ea15427a98ba3cdd6d9e14690011ab10",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "unchecked_low_level_calls",
+  "contract_id": "tokenRecipient",
+  "metadata": {
+    "num_contracts": 6,
+    "num_functions": 65,
+    "num_leads": 23
+  },
+  "target_output": {
+    "leads": [
+      {
+        "lead_id": "ld_000",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "StandardToken",
+          "function": "transfer(address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_001",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "StandardToken",
+          "function": "transferFrom(address,address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_002",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "StandardToken",
+          "function": "approve(address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_003",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "daoPOLSKAtokens()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_004",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "setSupply(uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_005",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "setotherchainstotalsupply(uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_006",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "transfer(address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_007",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "transferFrom(address,address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_008",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "approve(address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_009",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "fallback()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_010",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "setTokenInformation(string,string)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_011",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "setChainsAddresses(address,int256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_012",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "sendTokenAw(address,address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_013",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "createDaoPOLSKAtokens(address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_014",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "setBonusCreationRate(uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_015",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "turnrefund()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_016",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "fundingState()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_017",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "turnmigrate()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_018",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "finalize()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_019",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "migrate(uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_020",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "refundTRA()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_021",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "slitherConstructorVariables()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_022",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "daoPOLSKAtokens",
+          "function": "slitherConstructorConstantVariables()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      }
+    ],
+    "witnesses": [
+      {
+        "witness_id": "w_000",
+        "lead_id": "ld_000",
+        "path": [
+          "entry()",
+          "transfer(address,uint256)",
+          "external_call()",
+          "transfer(address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_001",
+        "lead_id": "ld_001",
+        "path": [
+          "entry()",
+          "transferFrom(address,address,uint256)",
+          "external_call()",
+          "transferFrom(address,address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_002",
+        "lead_id": "ld_002",
+        "path": [
+          "entry()",
+          "approve(address,uint256)",
+          "external_call()",
+          "approve(address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_003",
+        "lead_id": "ld_003",
+        "path": [
+          "entry()",
+          "daoPOLSKAtokens()",
+          "external_call()",
+          "daoPOLSKAtokens()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_004",
+        "lead_id": "ld_004",
+        "path": [
+          "entry()",
+          "setSupply(uint256)",
+          "external_call()",
+          "setSupply(uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_005",
+        "lead_id": "ld_005",
+        "path": [
+          "entry()",
+          "setotherchainstotalsupply(uint256)",
+          "external_call()",
+          "setotherchainstotalsupply(uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_006",
+        "lead_id": "ld_006",
+        "path": [
+          "entry()",
+          "transfer(address,uint256)",
+          "external_call()",
+          "transfer(address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_007",
+        "lead_id": "ld_007",
+        "path": [
+          "entry()",
+          "transferFrom(address,address,uint256)",
+          "external_call()",
+          "transferFrom(address,address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_008",
+        "lead_id": "ld_008",
+        "path": [
+          "entry()",
+          "approve(address,uint256)",
+          "external_call()",
+          "approve(address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_009",
+        "lead_id": "ld_009",
+        "path": [
+          "entry()",
+          "fallback()",
+          "external_call()",
+          "fallback()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_010",
+        "lead_id": "ld_010",
+        "path": [
+          "entry()",
+          "setTokenInformation(string,string)",
+          "external_call()",
+          "setTokenInformation(string,string)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_011",
+        "lead_id": "ld_011",
+        "path": [
+          "entry()",
+          "setChainsAddresses(address,int256)",
+          "external_call()",
+          "setChainsAddresses(address,int256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_012",
+        "lead_id": "ld_012",
+        "path": [
+          "entry()",
+          "sendTokenAw(address,address,uint256)",
+          "external_call()",
+          "sendTokenAw(address,address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_013",
+        "lead_id": "ld_013",
+        "path": [
+          "entry()",
+          "createDaoPOLSKAtokens(address)",
+          "external_call()",
+          "createDaoPOLSKAtokens(address)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_014",
+        "lead_id": "ld_014",
+        "path": [
+          "entry()",
+          "setBonusCreationRate(uint256)",
+          "external_call()",
+          "setBonusCreationRate(uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_015",
+        "lead_id": "ld_015",
+        "path": [
+          "entry()",
+          "turnrefund()",
+          "external_call()",
+          "turnrefund()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_016",
+        "lead_id": "ld_016",
+        "path": [
+          "entry()",
+          "fundingState()",
+          "external_call()",
+          "fundingState()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_017",
+        "lead_id": "ld_017",
+        "path": [
+          "entry()",
+          "turnmigrate()",
+          "external_call()",
+          "turnmigrate()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_018",
+        "lead_id": "ld_018",
+        "path": [
+          "entry()",
+          "finalize()",
+          "external_call()",
+          "finalize()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_019",
+        "lead_id": "ld_019",
+        "path": [
+          "entry()",
+          "migrate(uint256)",
+          "external_call()",
+          "migrate(uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_020",
+        "lead_id": "ld_020",
+        "path": [
+          "entry()",
+          "refundTRA()",
+          "external_call()",
+          "refundTRA()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_021",
+        "lead_id": "ld_021",
+        "path": [
+          "entry()",
+          "slitherConstructorVariables()",
+          "external_call()",
+          "slitherConstructorVariables()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_022",
+        "lead_id": "ld_022",
+        "path": [
+          "entry()",
+          "slitherConstructorConstantVariables()",
+          "external_call()",
+          "slitherConstructorConstantVariables()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      }
+    ]
+  }
+}

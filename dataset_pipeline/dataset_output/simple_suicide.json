@@ -1,0 +1,53 @@
+{
+  "example_id": "dataset\\access_control\\simple_suicide",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "access_control",
+  "contract_id": "SimpleSuicide",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 1,
+    "num_leads": 1
+  },
+  "target_output": {
+    "leads": [
+      {
+        "lead_id": "ld_000",
+        "pattern": "selfdestruct",
+        "swc_id": "SWC-106",
+        "target": {
+          "contract": "SimpleSuicide",
+          "function": "sudicideAnyone()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': False, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': True, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "selfdestruct"
+          }
+        ],
+        "confidence": 0.18,
+        "priority_score": 0.47,
+        "notes": "Multi-signal scoring applied"
+      }
+    ],
+    "witnesses": [
+      {
+        "witness_id": "w_000",
+        "lead_id": "ld_000",
+        "path": [
+          "entry()",
+          "sudicideAnyone()",
+          "external_call()",
+          "sudicideAnyone()"
+        ],
+        "bad_state": "contract_destroyed",
+        "precondition_cost": "low",
+        "confidence": 0.08
+      }
+    ]
+  }
+}

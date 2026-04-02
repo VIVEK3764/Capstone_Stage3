@@ -1,0 +1,16 @@
+{
+  "example_id": "dataset\\denial_of_service\\auction",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "denial_of_service",
+  "contract_id": "DosAuction",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 1,
+    "num_leads": 0
+  },
+  "target_output": {
+    "leads": [],
+    "witnesses": []
+  }
+}

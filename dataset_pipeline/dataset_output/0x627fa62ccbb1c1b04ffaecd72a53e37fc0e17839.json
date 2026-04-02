@@ -1,0 +1,613 @@
+{
+  "example_id": "dataset\\unchecked_low_level_calls\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "unchecked_low_level_calls",
+  "contract_id": "Ownable",
+  "metadata": {
+    "num_contracts": 3,
+    "num_functions": 16,
+    "num_leads": 17
+  },
+  "target_output": {
+    "leads": [
+      {
+        "lead_id": "ld_000",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Ownable",
+          "function": "changeOwner(address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_001",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Ownable",
+          "function": "confirmOwner()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_002",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Ownable",
+          "function": "slitherConstructorVariables()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_003",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Token",
+          "function": "changeOwner(address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_004",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Token",
+          "function": "confirmOwner()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_005",
+        "pattern": "unchecked_call",
+        "swc_id": "SWC-104",
+        "target": {
+          "contract": "Token",
+          "function": "WithdrawToken(address,uint256,address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': False, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "unchecked_call"
+          }
+        ],
+        "confidence": 0.15,
+        "priority_score": 0.39,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_006",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Token",
+          "function": "slitherConstructorVariables()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_007",
+        "pattern": "unchecked_call",
+        "swc_id": "SWC-104",
+        "target": {
+          "contract": "TokenBank",
+          "function": "WithdrawToken(address,uint256,address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': False, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "unchecked_call"
+          }
+        ],
+        "confidence": 0.15,
+        "priority_score": 0.39,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_008",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "TokenBank",
+          "function": "changeOwner(address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_009",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "TokenBank",
+          "function": "confirmOwner()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_010",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "TokenBank",
+          "function": "initTokenBank()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_011",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "TokenBank",
+          "function": "Deposit()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_012",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "TokenBank",
+          "function": "WitdrawTokenToHolder(address,address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_013",
+        "pattern": "reentrancy",
+        "swc_id": "SWC-107",
+        "target": {
+          "contract": "TokenBank",
+          "function": "WithdrawToHolder(address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': True}"
+          },
+          {
+            "tool": "pattern",
+            "note": "reentrancy"
+          }
+        ],
+        "confidence": 0.6,
+        "priority_score": 0.76,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_014",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "TokenBank",
+          "function": "WithdrawToHolder(address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': True}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.54,
+        "priority_score": 0.68,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_015",
+        "pattern": "unchecked_call",
+        "swc_id": "SWC-104",
+        "target": {
+          "contract": "TokenBank",
+          "function": "WithdrawToHolder(address,uint256)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': True}"
+          },
+          {
+            "tool": "pattern",
+            "note": "unchecked_call"
+          }
+        ],
+        "confidence": 0.45,
+        "priority_score": 0.57,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_016",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "TokenBank",
+          "function": "slitherConstructorVariables()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      }
+    ],
+    "witnesses": [
+      {
+        "witness_id": "w_000",
+        "lead_id": "ld_000",
+        "path": [
+          "entry()",
+          "changeOwner(address)",
+          "external_call()",
+          "changeOwner(address)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_001",
+        "lead_id": "ld_001",
+        "path": [
+          "entry()",
+          "confirmOwner()",
+          "external_call()",
+          "confirmOwner()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_002",
+        "lead_id": "ld_002",
+        "path": [
+          "entry()",
+          "slitherConstructorVariables()",
+          "external_call()",
+          "slitherConstructorVariables()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_003",
+        "lead_id": "ld_003",
+        "path": [
+          "entry()",
+          "changeOwner(address)",
+          "external_call()",
+          "changeOwner(address)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_004",
+        "lead_id": "ld_004",
+        "path": [
+          "entry()",
+          "confirmOwner()",
+          "external_call()",
+          "confirmOwner()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_005",
+        "lead_id": "ld_005",
+        "path": [
+          "entry()",
+          "WithdrawToken(address,uint256,address)",
+          "external_call()",
+          "WithdrawToken(address,uint256,address)"
+        ],
+        "bad_state": "silent_failure",
+        "precondition_cost": "low",
+        "confidence": 0.05
+      },
+      {
+        "witness_id": "w_006",
+        "lead_id": "ld_006",
+        "path": [
+          "entry()",
+          "slitherConstructorVariables()",
+          "external_call()",
+          "slitherConstructorVariables()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_007",
+        "lead_id": "ld_007",
+        "path": [
+          "entry()",
+          "WithdrawToken(address,uint256,address)",
+          "external_call()",
+          "WithdrawToken(address,uint256,address)"
+        ],
+        "bad_state": "silent_failure",
+        "precondition_cost": "low",
+        "confidence": 0.05
+      },
+      {
+        "witness_id": "w_008",
+        "lead_id": "ld_008",
+        "path": [
+          "entry()",
+          "changeOwner(address)",
+          "external_call()",
+          "changeOwner(address)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_009",
+        "lead_id": "ld_009",
+        "path": [
+          "entry()",
+          "confirmOwner()",
+          "external_call()",
+          "confirmOwner()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_010",
+        "lead_id": "ld_010",
+        "path": [
+          "entry()",
+          "initTokenBank()",
+          "external_call()",
+          "initTokenBank()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_011",
+        "lead_id": "ld_011",
+        "path": [
+          "entry()",
+          "Deposit()",
+          "external_call()",
+          "Deposit()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_012",
+        "lead_id": "ld_012",
+        "path": [
+          "entry()",
+          "WitdrawTokenToHolder(address,address,uint256)",
+          "external_call()",
+          "WitdrawTokenToHolder(address,address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_013",
+        "lead_id": "ld_013",
+        "path": [
+          "entry()",
+          "WithdrawToHolder(address,uint256)",
+          "external_call()",
+          "WithdrawToHolder(address,uint256)"
+        ],
+        "bad_state": "balance_drain",
+        "precondition_cost": "low",
+        "confidence": 0.5
+      },
+      {
+        "witness_id": "w_014",
+        "lead_id": "ld_014",
+        "path": [
+          "entry()",
+          "WithdrawToHolder(address,uint256)",
+          "external_call()",
+          "WithdrawToHolder(address,uint256)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.44
+      },
+      {
+        "witness_id": "w_015",
+        "lead_id": "ld_015",
+        "path": [
+          "entry()",
+          "WithdrawToHolder(address,uint256)",
+          "external_call()",
+          "WithdrawToHolder(address,uint256)"
+        ],
+        "bad_state": "silent_failure",
+        "precondition_cost": "low",
+        "confidence": 0.35
+      },
+      {
+        "witness_id": "w_016",
+        "lead_id": "ld_016",
+        "path": [
+          "entry()",
+          "slitherConstructorVariables()",
+          "external_call()",
+          "slitherConstructorVariables()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      }
+    ]
+  }
+}

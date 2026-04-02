@@ -1,0 +1,263 @@
+{
+  "example_id": "dataset\\denial_of_service\\list_dos",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "denial_of_service",
+  "contract_id": "Government",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 10,
+    "num_leads": 7
+  },
+  "target_output": {
+    "leads": [
+      {
+        "lead_id": "ld_000",
+        "pattern": "timestamp_dependence",
+        "swc_id": "SWC-116",
+        "target": {
+          "contract": "Government",
+          "function": "Government()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': True, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "timestamp_dependence"
+          }
+        ],
+        "confidence": 0.07,
+        "priority_score": 0.24,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_001",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Government",
+          "function": "Government()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': True, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_002",
+        "pattern": "timestamp_dependence",
+        "swc_id": "SWC-116",
+        "target": {
+          "contract": "Government",
+          "function": "lendGovernmentMoney(address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': True, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "timestamp_dependence"
+          }
+        ],
+        "confidence": 0.07,
+        "priority_score": 0.24,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_003",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Government",
+          "function": "lendGovernmentMoney(address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': True, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_004",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Government",
+          "function": "investInTheSystem()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_005",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Government",
+          "function": "inheritToNextGeneration(address)"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      },
+      {
+        "lead_id": "ld_006",
+        "pattern": "access_control",
+        "swc_id": "SWC-105",
+        "target": {
+          "contract": "Government",
+          "function": "slitherConstructorConstantVariables()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': True, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "access_control"
+          }
+        ],
+        "confidence": 0.14,
+        "priority_score": 0.44,
+        "notes": "Multi-signal scoring applied"
+      }
+    ],
+    "witnesses": [
+      {
+        "witness_id": "w_000",
+        "lead_id": "ld_000",
+        "path": [
+          "entry()",
+          "Government()",
+          "external_call()",
+          "Government()"
+        ],
+        "bad_state": "time_manipulation",
+        "precondition_cost": "low",
+        "confidence": -0.03
+      },
+      {
+        "witness_id": "w_001",
+        "lead_id": "ld_001",
+        "path": [
+          "entry()",
+          "Government()",
+          "external_call()",
+          "Government()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_002",
+        "lead_id": "ld_002",
+        "path": [
+          "entry()",
+          "lendGovernmentMoney(address)",
+          "external_call()",
+          "lendGovernmentMoney(address)"
+        ],
+        "bad_state": "time_manipulation",
+        "precondition_cost": "low",
+        "confidence": -0.03
+      },
+      {
+        "witness_id": "w_003",
+        "lead_id": "ld_003",
+        "path": [
+          "entry()",
+          "lendGovernmentMoney(address)",
+          "external_call()",
+          "lendGovernmentMoney(address)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_004",
+        "lead_id": "ld_004",
+        "path": [
+          "entry()",
+          "investInTheSystem()",
+          "external_call()",
+          "investInTheSystem()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_005",
+        "lead_id": "ld_005",
+        "path": [
+          "entry()",
+          "inheritToNextGeneration(address)",
+          "external_call()",
+          "inheritToNextGeneration(address)"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      },
+      {
+        "witness_id": "w_006",
+        "lead_id": "ld_006",
+        "path": [
+          "entry()",
+          "slitherConstructorConstantVariables()",
+          "external_call()",
+          "slitherConstructorConstantVariables()"
+        ],
+        "bad_state": "unauthorized_access",
+        "precondition_cost": "low",
+        "confidence": 0.04
+      }
+    ]
+  }
+}

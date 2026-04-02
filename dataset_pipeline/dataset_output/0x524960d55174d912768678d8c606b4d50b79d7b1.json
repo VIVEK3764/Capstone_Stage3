@@ -1,0 +1,53 @@
+{
+  "example_id": "dataset\\unchecked_low_level_calls\\0x524960d55174d912768678d8c606b4d50b79d7b1",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "unchecked_low_level_calls",
+  "contract_id": "Centra4",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 1,
+    "num_leads": 1
+  },
+  "target_output": {
+    "leads": [
+      {
+        "lead_id": "ld_000",
+        "pattern": "unchecked_call",
+        "swc_id": "SWC-104",
+        "target": {
+          "contract": "Centra4",
+          "function": "transfer()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': True, 'writes_state': False, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': False, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "unchecked_call"
+          }
+        ],
+        "confidence": 0.15,
+        "priority_score": 0.39,
+        "notes": "Multi-signal scoring applied"
+      }
+    ],
+    "witnesses": [
+      {
+        "witness_id": "w_000",
+        "lead_id": "ld_000",
+        "path": [
+          "entry()",
+          "transfer()",
+          "external_call()",
+          "transfer()"
+        ],
+        "bad_state": "silent_failure",
+        "precondition_cost": "low",
+        "confidence": 0.05
+      }
+    ]
+  }
+}

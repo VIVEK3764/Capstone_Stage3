@@ -1,0 +1,16 @@
+{
+  "example_id": "dataset\\arithmetic\\insecure_transfer",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "arithmetic",
+  "contract_id": "IntegerOverflowAdd",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 1,
+    "num_leads": 0
+  },
+  "target_output": {
+    "leads": [],
+    "witnesses": []
+  }
+}

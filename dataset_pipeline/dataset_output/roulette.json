@@ -1,0 +1,16 @@
+{
+  "example_id": "dataset\\time_manipulation\\roulette",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "time_manipulation",
+  "contract_id": "Roulette",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 2,
+    "num_leads": 0
+  },
+  "target_output": {
+    "leads": [],
+    "witnesses": []
+  }
+}

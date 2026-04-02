@@ -1,0 +1,53 @@
+{
+  "example_id": "dataset\\time_manipulation\\timed_crowdsale",
+  "split": "train",
+  "source": "smartbugs",
+  "ground_truth": "time_manipulation",
+  "contract_id": "TimedCrowdsale",
+  "metadata": {
+    "num_contracts": 1,
+    "num_functions": 1,
+    "num_leads": 1
+  },
+  "target_output": {
+    "leads": [
+      {
+        "lead_id": "ld_000",
+        "pattern": "timestamp_dependence",
+        "swc_id": "SWC-116",
+        "target": {
+          "contract": "TimedCrowdsale",
+          "function": "isSaleFinished()"
+        },
+        "evidence": [
+          {
+            "tool": "signals",
+            "note": "{'has_external_call': False, 'writes_state': False, 'has_require': False, 'uses_tx_origin': False, 'uses_timestamp': True, 'has_delegatecall': False, 'has_selfdestruct': False, 'has_loop': False, 'writes_after_call': False}"
+          },
+          {
+            "tool": "pattern",
+            "note": "timestamp_dependence"
+          }
+        ],
+        "confidence": 0.0,
+        "priority_score": 0.2,
+        "notes": "Multi-signal scoring applied"
+      }
+    ],
+    "witnesses": [
+      {
+        "witness_id": "w_000",
+        "lead_id": "ld_000",
+        "path": [
+          "entry()",
+          "isSaleFinished()",
+          "external_call()",
+          "isSaleFinished()"
+        ],
+        "bad_state": "time_manipulation",
+        "precondition_cost": "low",
+        "confidence": -0.1
+      }
+    ]
+  }
+}
